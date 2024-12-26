@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { BaseQueryApi, FetchArgs } from "@reduxjs/toolkit/query";
-import { User } from "@clerk/nextjs/server";
-import { Clerk } from "@clerk/clerk-js";
-import { toast } from "sonner";
+// import { User } from "@clerk/nextjs/server";
+// import { Clerk } from "@clerk/clerk-js";
+// import { toast } from "sonner";
 
 const customBaseQuery = async (
   args: string | FetchArgs,
@@ -63,10 +63,10 @@ export const api = createApi({
   reducerPath: "api",
   tagTypes: ["Courses", "Users", "UserCourseProgress"],
   endpoints: (build) => ({
-    /* 
+    /*
     ===============
     USER CLERK
-    =============== 
+    ===============
     */
     updateUser: build.mutation<User, Partial<User> & { userId: string }>({
       query: ({ userId, ...updatedUser }) => ({
@@ -77,10 +77,10 @@ export const api = createApi({
       invalidatesTags: ["Users"],
     }),
 
-    /* 
+    /*
     ===============
     COURSES
-    =============== 
+    ===============
     */
     getCourses: build.query<Course[], { category?: string }>({
       query: ({ category }) => ({
@@ -146,10 +146,10 @@ export const api = createApi({
       }),
     }),
 
-    /* 
+    /*
     ===============
     TRANSACTIONS
-    =============== 
+    ===============
     */
     getTransactions: build.query<Transaction[], string>({
       query: (userId) => `transactions?userId=${userId}`,
@@ -172,10 +172,10 @@ export const api = createApi({
       }),
     }),
 
-    /* 
+    /*
     ===============
     USER COURSE PROGRESS
-    =============== 
+    ===============
     */
     getUserEnrolledCourses: build.query<Course[], string>({
       query: (userId) => `users/course-progress/${userId}/enrolled-courses`,
