@@ -29,6 +29,7 @@ export default function DashboardLayout({
         <div className="dashboard__content">
           {/* Chapter side bar */}
           <div className={cn("dashboard__main")} style={{ height: "100vh" }}>
+            <Navbar />
             <main className="dashboard__body">{children}</main>
           </div>
         </div>
