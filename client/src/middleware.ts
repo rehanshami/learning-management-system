@@ -8,11 +8,11 @@ export default clerkMiddleware(async (auth, req) => {
   const { sessionClaims } = await auth();
   const userRole =
     (sessionClaims?.metadata as { userType: "student" | "teacher" })
-      ?.userType || "student";
+      ?.userType || "teacher"; //I changed from "student" to "teacher" for testing
 
   if (isStudentRoute(req)) {
     if (userRole !== "student") {
-      const url = new URL("/teachers/courses", req.url);
+      const url = new URL("/teacher/courses", req.url);
       return NextResponse.redirect(url);
     }
   }
