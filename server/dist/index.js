@@ -48,6 +48,7 @@ const courseRoutes_1 = __importDefault(require("./routes/courseRoutes"));
 const express_2 = require("@clerk/express");
 const userClerkRoutes_1 = __importDefault(require("./routes/userClerkRoutes"));
 const transactionRoutes_1 = __importDefault(require("./routes/transactionRoutes"));
+const userCourseProgressRoutes_1 = __importDefault(require("./routes/userCourseProgressRoutes"));
 // ROUTE IMPORTS
 // CONFIGURATIONS
 dotenv_1.default.config();
@@ -74,6 +75,7 @@ app.get("/", (req, res) => {
 app.use("/courses", courseRoutes_1.default);
 app.use("/users/clerk", (0, express_2.requireAuth)(), userClerkRoutes_1.default);
 app.use("/transactions", (0, express_2.requireAuth)(), transactionRoutes_1.default);
+app.use("/users/course-progress", (0, express_2.requireAuth)(), userCourseProgressRoutes_1.default);
 // SERVER
 const port = process.env.PORT || 3000;
 if (!isProduction) {
