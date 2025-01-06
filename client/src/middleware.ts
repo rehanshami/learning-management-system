@@ -8,7 +8,7 @@ export default clerkMiddleware(async (auth, req) => {
   const { sessionClaims } = await auth();
   const userRole =
     (sessionClaims?.metadata as { userType: "student" | "teacher" })
-      ?.userType || "teacher"; //I changed from "student" to "teacher" for testing
+      ?.userType || "student"; //I changed from "student" to "teacher" for testing
 
   if (isStudentRoute(req)) {
     if (userRole !== "student") {
