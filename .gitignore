@@ -1,5 +1,21 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+**/node_modules/
+**/dist/
+.env
+client/.env.local
+client/.env.development
+client/.env.production
+server/.env
 
+client/.next/
+
+.DS_Store
+Thumbs.db
+.vscode/
+
+server/shared-local-instance.db
+server/dynamo-local-metadata.json
+shared-local-instance.db
 # dependencies
 /node_modules
 /.pnp

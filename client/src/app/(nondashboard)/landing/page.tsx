@@ -46,7 +46,7 @@ const Landing = () => {
   const currentImage = useCarousel({ totalImages: 3 });
   const { data: courses, isLoading, isError } = useGetCoursesQuery({});
   const handleCourseClick = (courseId: string) => {
-    router.push(`/search?id=${courseId}`);
+    router.push(`/search?id=${courseId}`, { scroll: false });
   };
   // console.log("courses:", courses);
 
@@ -73,7 +73,7 @@ const Landing = () => {
             Courses when you need them and want them.
           </p>
           <div className="landing__cta">
-            <Link href="/search">
+            <Link href="/search" scroll={false}>
               <div className="landing__cta-button">Search for courses</div>
             </Link>
           </div>

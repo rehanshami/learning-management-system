@@ -37,7 +37,9 @@ const Search = () => {
   };
 
   const handleEnrollNow = (courseId: string) => {
-    router.push(`/checkout?step=1&id=${courseId}&showSignUp=false`);
+    router.push(`/checkout?step=1&id=${courseId}&showSignUp=false`, {
+      scroll: false,
+    });
   };
 
   return (
