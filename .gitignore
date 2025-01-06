@@ -6,6 +6,7 @@ client/.env.local
 client/.env.development
 client/.env.production
 server/.env
+**/node_modules/
 
 client/.next/
 
