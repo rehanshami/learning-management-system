@@ -1,6 +1,6 @@
 # Full-Stack Learning Management System (LMS)
 
-**[View Live Project](https://learning-management-system-beta-one.vercel.app/)** | **[View GitHub Repository](#)**
+**[View Live Project](https://learning-management-system-beta-one.vercel.app/)**
 
 ## Overview
 
@@ -16,7 +16,11 @@ This is a scalable, enterprise-grade Learning Management System leveraging moder
 
 ## Project Structure
 
-root/ ├── client/ # Frontend code (React, Next.js, Tailwind CSS) ├── server/ # Backend code (Node.js, Express.js, AWS Lambda) └── README.md # Project documentation
+```
+root/
+├── client/    # Frontend code (React, Next.js, Tailwind CSS)
+├── server/    # Backend code (Node.js, Express.js, AWS Lambda)
+```
 
 ---
 
